@@ -18,7 +18,7 @@ response = requests.get(url, headers=header)
 soup = BeautifulSoup(response.content, "lxml")
 print(soup.prettify())
 
-price = soup.find(class_="a-offscreen").get_text()
+price = soup.find(class_="a-price-whole").get_text()
 price_without_currency = price.split("₹")[1]
 price_as_float = float(price_without_currency)
 print(price_as_float)
